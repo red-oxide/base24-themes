@@ -24,6 +24,8 @@ in
 | `normalizeTheme theme` | The theme with all 24 colors filled in and lowercased; throws on invalid input |
 | `getColors theme` | An attrset of just the 24 colors |
 | `getColor theme name` / `getColorHex theme name` | One color, without or with a leading `#` |
+| `luminance hex` | WCAG relative luminance of a color, from 0 to 1 |
+| `contrastRatio a b` | WCAG contrast ratio between two colors, from 1 to 21 |
 | `toYaml`, `toJson`, `toScss`, `toQml` | The theme as a string in that format |
 | `toSvg theme` | A preview image: palette swatches plus a highlighted code sample |
 | `toCardSvg theme` | A gallery card: code sample, palette strip and system/variant tags |
@@ -96,12 +98,12 @@ missing or out of date.
 
 ## NixOS and Home Manager module
 
-The same module is exported as `nixosModules.default` and
-`homeManagerModules.default`:
+The same module is exported as `nixosModules.default` and `homeModules.default`
+(also as `homeManagerModules.default`, the older name, which keeps working):
 
 ```nix
 { inputs, config, ... }: {
-  imports = [ inputs.base24-themes.homeManagerModules.default ];
+  imports = [ inputs.base24-themes.homeModules.default ];
 
   base24.theme = "birdland";
   # or: base24.customTheme = { base00 = "181818"; ... };

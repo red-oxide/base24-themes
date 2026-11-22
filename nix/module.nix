@@ -54,6 +54,9 @@ in
 {
   flake.nixosModules.base24 = module;
   flake.nixosModules.default = module;
+  flake.homeModules.base24 = module;
+  flake.homeModules.default = module;
+  # The older output name, kept so existing configurations keep working.
   flake.homeManagerModules.base24 = module;
   flake.homeManagerModules.default = module;
 }

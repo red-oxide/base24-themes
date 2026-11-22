@@ -8,6 +8,18 @@ Unreleased. Routine flake input updates and formatting commits are left out.
 
 ## Unreleased
 
+### 2026-11-22
+
+#### Added
+
+- `luminance` and `contrastRatio`: WCAG 2 relative luminance and contrast ratio,
+  in pure Nix (sRGB is linearized with a lookup table, since Nix has no `pow`).
+- Tests that every bundled theme's accents (`base08` to `base0F`) reach 4.5:1 on
+  `base00`, and Birdland Light's on `base01` too, as their pages claim. The
+  depth-order test uses real luminance instead of an ungamma-corrected sum.
+- The module is exported as `homeModules.{base24,default}`, the name newer
+  flakes use. `homeManagerModules` is kept as an alias.
+
 ### 2026-11-08
 
 #### Added
