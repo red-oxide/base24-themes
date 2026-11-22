@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="824" height="542" viewBox="0 0 824 542" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<rect width="100%" height="100%" rx="10" fill="#eef4f2"/>
+<text x="24" y="40" fill="#13282d" font-size="20" font-weight="bold">Blue Crab Light</text>
+<text x="800" y="40" fill="#5a706d" font-size="13" text-anchor="end">light · by chrisppy</text>
+<text x="24" y="78" fill="#5a706d" font-size="13">base00–base07 · background to foreground</text>
+<rect x="24" y="88" width="90" height="64" rx="6" fill="#eef4f2" stroke="#d1dedb"/>
+<text x="32" y="110" fill="#08161a" font-size="13" font-weight="bold">base00</text>
+<text x="32" y="140" fill="#08161a" font-size="12">#eef4f2</text><rect x="122" y="88" width="90" height="64" rx="6" fill="#e3ecea" stroke="#d1dedb"/>
+<text x="130" y="110" fill="#08161a" font-size="13" font-weight="bold">base01</text>
+<text x="130" y="140" fill="#08161a" font-size="12">#e3ecea</text><rect x="220" y="88" width="90" height="64" rx="6" fill="#d1dedb" stroke="#d1dedb"/>
+<text x="228" y="110" fill="#08161a" font-size="13" font-weight="bold">base02</text>
+<text x="228" y="140" fill="#08161a" font-size="12">#d1dedb</text><rect x="318" y="88" width="90" height="64" rx="6" fill="#92a7a4" stroke="#d1dedb"/>
+<text x="326" y="110" fill="#08161a" font-size="13" font-weight="bold">base03</text>
+<text x="326" y="140" fill="#08161a" font-size="12">#92a7a4</text><rect x="416" y="88" width="90" height="64" rx="6" fill="#5a706d" stroke="#d1dedb"/>
+<text x="424" y="110" fill="#eef4f2" font-size="13" font-weight="bold">base04</text>
+<text x="424" y="140" fill="#eef4f2" font-size="12">#5a706d</text><rect x="514" y="88" width="90" height="64" rx="6" fill="#13282d" stroke="#d1dedb"/>
+<text x="522" y="110" fill="#eef4f2" font-size="13" font-weight="bold">base05</text>
+<text x="522" y="140" fill="#eef4f2" font-size="12">#13282d</text><rect x="612" y="88" width="90" height="64" rx="6" fill="#0b1c20" stroke="#d1dedb"/>
+<text x="620" y="110" fill="#eef4f2" font-size="13" font-weight="bold">base06</text>
+<text x="620" y="140" fill="#eef4f2" font-size="12">#0b1c20</text><rect x="710" y="88" width="90" height="64" rx="6" fill="#08161a" stroke="#d1dedb"/>
+<text x="718" y="110" fill="#eef4f2" font-size="13" font-weight="bold">base07</text>
+<text x="718" y="140" fill="#eef4f2" font-size="12">#08161a</text>
+<text x="24" y="182" fill="#5a706d" font-size="13">base08–base0F · accents</text>
+<rect x="24" y="192" width="90" height="64" rx="6" fill="#c42909" stroke="#d1dedb"/>
+<text x="32" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base08</text>
+<text x="32" y="244" fill="#eef4f2" font-size="12">#c42909</text><rect x="122" y="192" width="90" height="64" rx="6" fill="#a74902" stroke="#d1dedb"/>
+<text x="130" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base09</text>
+<text x="130" y="244" fill="#eef4f2" font-size="12">#a74902</text><rect x="220" y="192" width="90" height="64" rx="6" fill="#865e0d" stroke="#d1dedb"/>
+<text x="228" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base0A</text>
+<text x="228" y="244" fill="#eef4f2" font-size="12">#865e0d</text><rect x="318" y="192" width="90" height="64" rx="6" fill="#2f7349" stroke="#d1dedb"/>
+<text x="326" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base0B</text>
+<text x="326" y="244" fill="#eef4f2" font-size="12">#2f7349</text><rect x="416" y="192" width="90" height="64" rx="6" fill="#1f706e" stroke="#d1dedb"/>
+<text x="424" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base0C</text>
+<text x="424" y="244" fill="#eef4f2" font-size="12">#1f706e</text><rect x="514" y="192" width="90" height="64" rx="6" fill="#1b66b8" stroke="#d1dedb"/>
+<text x="522" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base0D</text>
+<text x="522" y="244" fill="#eef4f2" font-size="12">#1b66b8</text><rect x="612" y="192" width="90" height="64" rx="6" fill="#ae3974" stroke="#d1dedb"/>
+<text x="620" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base0E</text>
+<text x="620" y="244" fill="#eef4f2" font-size="12">#ae3974</text><rect x="710" y="192" width="90" height="64" rx="6" fill="#7c6141" stroke="#d1dedb"/>
+<text x="718" y="214" fill="#eef4f2" font-size="13" font-weight="bold">base0F</text>
+<text x="718" y="244" fill="#eef4f2" font-size="12">#7c6141</text>
+<text x="24" y="286" fill="#5a706d" font-size="13">base10–base17 · Base24 extensions</text>
+<rect x="24" y="296" width="90" height="64" rx="6" fill="#e9f0ee" stroke="#d1dedb"/>
+<text x="32" y="318" fill="#08161a" font-size="13" font-weight="bold">base10</text>
+<text x="32" y="348" fill="#08161a" font-size="12">#e9f0ee</text><rect x="122" y="296" width="90" height="64" rx="6" fill="#e3ebe8" stroke="#d1dedb"/>
+<text x="130" y="318" fill="#08161a" font-size="13" font-weight="bold">base11</text>
+<text x="130" y="348" fill="#08161a" font-size="12">#e3ebe8</text><rect x="220" y="296" width="90" height="64" rx="6" fill="#b02508" stroke="#d1dedb"/>
+<text x="228" y="318" fill="#eef4f2" font-size="13" font-weight="bold">base12</text>
+<text x="228" y="348" fill="#eef4f2" font-size="12">#b02508</text><rect x="318" y="296" width="90" height="64" rx="6" fill="#78540c" stroke="#d1dedb"/>
+<text x="326" y="318" fill="#eef4f2" font-size="13" font-weight="bold">base13</text>
+<text x="326" y="348" fill="#eef4f2" font-size="12">#78540c</text><rect x="416" y="296" width="90" height="64" rx="6" fill="#2a6641" stroke="#d1dedb"/>
+<text x="424" y="318" fill="#eef4f2" font-size="13" font-weight="bold">base14</text>
+<text x="424" y="348" fill="#eef4f2" font-size="12">#2a6641</text><rect x="514" y="296" width="90" height="64" rx="6" fill="#1b6463" stroke="#d1dedb"/>
+<text x="522" y="318" fill="#eef4f2" font-size="13" font-weight="bold">base15</text>
+<text x="522" y="348" fill="#eef4f2" font-size="12">#1b6463</text><rect x="612" y="296" width="90" height="64" rx="6" fill="#185ba4" stroke="#d1dedb"/>
+<text x="620" y="318" fill="#eef4f2" font-size="13" font-weight="bold">base16</text>
+<text x="620" y="348" fill="#eef4f2" font-size="12">#185ba4</text><rect x="710" y="296" width="90" height="64" rx="6" fill="#9b3368" stroke="#d1dedb"/>
+<text x="718" y="318" fill="#eef4f2" font-size="13" font-weight="bold">base17</text>
+<text x="718" y="348" fill="#eef4f2" font-size="12">#9b3368</text>
+<rect x="24" y="384" width="776" height="134" rx="6" fill="#e3ecea" stroke="#d1dedb"/>
+<text x="40" y="414" font-size="14" xml:space="preserve"><tspan fill="#92a7a4"># Oriole Park at Camden Yards</tspan></text>
+<text x="40" y="436" font-size="14" xml:space="preserve"><tspan fill="#ae3974">def </tspan><tspan fill="#1b66b8">first_pitch</tspan><tspan fill="#13282d">(</tspan><tspan fill="#c42909">team</tspan><tspan fill="#13282d">: </tspan><tspan fill="#865e0d">str</tspan><tspan fill="#13282d">, </tspan><tspan fill="#c42909">inning</tspan><tspan fill="#13282d">: </tspan><tspan fill="#865e0d">int</tspan><tspan fill="#13282d"> = </tspan><tspan fill="#a74902">1</tspan><tspan fill="#13282d">) -&gt; </tspan><tspan fill="#865e0d">Game</tspan><tspan fill="#13282d">:</tspan></text>
+<text x="40" y="458" font-size="14" xml:space="preserve"><tspan fill="#ae3974">    if not </tspan><tspan fill="#c42909">team</tspan><tspan fill="#13282d">:</tspan></text>
+<text x="40" y="480" font-size="14" xml:space="preserve"><tspan fill="#ae3974">        raise </tspan><tspan fill="#865e0d">ValueError</tspan><tspan fill="#13282d">(</tspan><tspan fill="#2f7349">&quot;no lineup\n&quot;</tspan><tspan fill="#13282d">)</tspan></text>
+<text x="40" y="502" font-size="14" xml:space="preserve"><tspan fill="#ae3974">    return </tspan><tspan fill="#865e0d">Game</tspan><tspan fill="#13282d">(home=</tspan><tspan fill="#2f7349">&quot;Orioles&quot;</tspan><tspan fill="#13282d">, innings=</tspan><tspan fill="#a74902">9</tspan><tspan fill="#13282d"> + </tspan><tspan fill="#c42909">inning</tspan><tspan fill="#13282d">)</tspan></text>
+</svg>

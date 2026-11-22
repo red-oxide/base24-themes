@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="392" height="201" viewBox="0 0 392 201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace">
+<title>Spangled Light</title>
+<rect x="0.5" y="0.5" width="391" height="200" rx="10" fill="#f4f1ea" stroke="#dcd7cb"/>
+<clipPath id="strip"><rect x="16" y="123" width="360" height="28" rx="4"/></clipPath>
+<text x="16" y="30" font-size="11" xml:space="preserve"><tspan fill="#a29d93"># Oriole Park at Camden Yards</tspan></text>
+<text x="16" y="47" font-size="11" xml:space="preserve"><tspan fill="#ac3185">def </tspan><tspan fill="#2f5dcc">first_pitch</tspan><tspan fill="#1c2030">(</tspan><tspan fill="#c0250d">team</tspan><tspan fill="#1c2030">: </tspan><tspan fill="#865d02">str</tspan><tspan fill="#1c2030">, </tspan><tspan fill="#c0250d">inning</tspan><tspan fill="#1c2030">: </tspan><tspan fill="#865d02">int</tspan><tspan fill="#1c2030"> = </tspan><tspan fill="#ae4203">1</tspan><tspan fill="#1c2030">) -&gt; </tspan><tspan fill="#865d02">Game</tspan><tspan fill="#1c2030">:</tspan></text>
+<text x="16" y="64" font-size="11" xml:space="preserve"><tspan fill="#ac3185">    if not </tspan><tspan fill="#c0250d">team</tspan><tspan fill="#1c2030">:</tspan></text>
+<text x="16" y="81" font-size="11" xml:space="preserve"><tspan fill="#ac3185">        raise </tspan><tspan fill="#865d02">ValueError</tspan><tspan fill="#1c2030">(</tspan><tspan fill="#4b6e33">&quot;no lineup\n&quot;</tspan><tspan fill="#1c2030">)</tspan></text>
+<text x="16" y="98" font-size="11" xml:space="preserve"><tspan fill="#ac3185">    return </tspan><tspan fill="#865d02">Game</tspan><tspan fill="#1c2030">(home=</tspan><tspan fill="#4b6e33">&quot;Orioles&quot;</tspan><tspan fill="#1c2030">, innings=</tspan><tspan fill="#ae4203">9</tspan><tspan fill="#1c2030"> + </tspan><tspan fill="#c0250d">inning</tspan><tspan fill="#1c2030">)</tspan></text>
+<g clip-path="url(#strip)">
+<rect x="16" y="123" width="15" height="28" fill="#f4f1ea"><title>base00 #f4f1ea</title></rect>
+<rect x="31" y="123" width="15" height="28" fill="#ebe7de"><title>base01 #ebe7de</title></rect>
+<rect x="46" y="123" width="15" height="28" fill="#dcd7cb"><title>base02 #dcd7cb</title></rect>
+<rect x="61" y="123" width="15" height="28" fill="#a29d93"><title>base03 #a29d93</title></rect>
+<rect x="76" y="123" width="15" height="28" fill="#686459"><title>base04 #686459</title></rect>
+<rect x="91" y="123" width="15" height="28" fill="#1c2030"><title>base05 #1c2030</title></rect>
+<rect x="106" y="123" width="15" height="28" fill="#121522"><title>base06 #121522</title></rect>
+<rect x="121" y="123" width="15" height="28" fill="#0b0d14"><title>base07 #0b0d14</title></rect>
+<rect x="136" y="123" width="15" height="28" fill="#c0250d"><title>base08 #c0250d</title></rect>
+<rect x="151" y="123" width="15" height="28" fill="#ae4203"><title>base09 #ae4203</title></rect>
+<rect x="166" y="123" width="15" height="28" fill="#865d02"><title>base0A #865d02</title></rect>
+<rect x="181" y="123" width="15" height="28" fill="#4b6e33"><title>base0B #4b6e33</title></rect>
+<rect x="196" y="123" width="15" height="28" fill="#276c85"><title>base0C #276c85</title></rect>
+<rect x="211" y="123" width="15" height="28" fill="#2f5dcc"><title>base0D #2f5dcc</title></rect>
+<rect x="226" y="123" width="15" height="28" fill="#ac3185"><title>base0E #ac3185</title></rect>
+<rect x="241" y="123" width="15" height="28" fill="#795f36"><title>base0F #795f36</title></rect>
+<rect x="256" y="123" width="15" height="28" fill="#efebe3"><title>base10 #efebe3</title></rect>
+<rect x="271" y="123" width="15" height="28" fill="#e9e5dc"><title>base11 #e9e5dc</title></rect>
+<rect x="286" y="123" width="15" height="28" fill="#ad210c"><title>base12 #ad210c</title></rect>
+<rect x="301" y="123" width="15" height="28" fill="#775302"><title>base13 #775302</title></rect>
+<rect x="316" y="123" width="15" height="28" fill="#43622e"><title>base14 #43622e</title></rect>
+<rect x="331" y="123" width="15" height="28" fill="#236075"><title>base15 #236075</title></rect>
+<rect x="346" y="123" width="15" height="28" fill="#2a53b6"><title>base16 #2a53b6</title></rect>
+<rect x="361" y="123" width="15" height="28" fill="#9a2c77"><title>base17 #9a2c77</title></rect>
+</g>
+<rect x="16" y="123" width="360" height="28" rx="4" fill="none" stroke="#dcd7cb"/>
+<rect x="16" y="165" width="58" height="20" rx="10" fill="#ebe7de" stroke="#dcd7cb"/>
+<text x="45" y="179" fill="#686459" font-size="11" text-anchor="middle">base24</text>
+<rect x="80" y="165" width="51" height="20" rx="10" fill="#ebe7de" stroke="#dcd7cb"/>
+<text x="105" y="179" fill="#686459" font-size="11" text-anchor="middle">light</text>
+</svg>

@@ -9,9 +9,13 @@ small library of format converters and a module for NixOS and Home Manager.
 
 ## Features
 
-- **Bundled themes**: ships with [`birdland`](./docs/birdland.md) (dark) and
-  [`birdland-light`](./docs/birdland-light.md) (light), with more planned. Every
-  file in `themes/` is picked up automatically.
+- **Bundled themes**, each with a dark variant and a `-light` one:
+  [`birdland`](./docs/birdland.md), [`spangled`](./docs/spangled.md),
+  [`eastern-shore`](./docs/eastern-shore.md),
+  [`blue-crab`](./docs/blue-crab.md), [`harbor`](./docs/harbor.md) and
+  [`red-oxide`](./docs/red-oxide.md). Every accent reaches 4.5:1 contrast on the
+  background, and `nix flake check` tests it. Every file in `themes/` is picked
+  up automatically.
 - **Format converters**: `toYaml` (tinted-theming scheme format), `toJson`,
   `toScss`, `toQml`, `toSvg` (the palette preview images) and `toCardSvg` (the
   gallery cards).
