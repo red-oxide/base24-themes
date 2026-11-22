@@ -3,12 +3,23 @@
 All notable changes to base24-themes are recorded here. The format is based on
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
-There are no tagged releases yet, so changes are grouped by date under
-Unreleased. Routine flake input updates and formatting commits are left out.
+Versions are CalVer, `YY.MINOR.PATCH`: the major number is the two-digit year.
+Routine flake input updates and formatting commits are left out.
 
 ## Unreleased
 
+## [26.0.0] - 2026-11-22
+
+The first tagged release. Pin it with `github:red-oxide/base24-themes/v26.0.0`.
+Changes before it are listed by date.
+
 ### 2026-11-22
+
+#### Changed
+
+- Trademarked names are gone from the themes, docs and the code sample on the
+  previews and gallery cards. Birdland's colors are unchanged; only their labels
+  are renamed (for example "bird orange" and "ballpark seat green").
 
 #### Added
 
@@ -34,8 +45,8 @@ Unreleased. Routine flake input updates and formatting commits are left out.
 #### Added
 
 - [Birdland Light](./docs/birdland-light.md) theme: a cream background, charcoal
-  text, and the Orioles accents deepened to reach 4.5:1 contrast on `base00` and
-  `base01`.
+  text, and the Birdland accents deepened to reach 4.5:1 contrast on `base00`
+  and `base01`.
 
 #### Fixed
 
@@ -77,9 +88,9 @@ Unreleased. Routine flake input updates and formatting commits are left out.
   without flakes), split into core, themes and one file per format.
 - `toYaml` emits the tinted-theming scheme format. Colors are lowercased,
   `variant` is validated, and errors show the offending values.
-- Birdland is tuned to the Orioles palette: `base08` is Orioles orange
-  (`#df4601`), every accent reaches 4.5:1 contrast on `base00`, and bright
-  variants are lighter than normals.
+- Birdland is tuned to its team palette: `base08` is bird orange (`#df4601`),
+  every accent reaches 4.5:1 contrast on `base00`, and bright variants are
+  lighter than normals.
 
 #### Fixed
 
@@ -114,3 +125,5 @@ Unreleased. Routine flake input updates and formatting commits are left out.
 ### 2026-09-28 to 2026-09-29
 
 - Initial commit, released under the MIT license.
+
+[26.0.0]: https://github.com/red-oxide/base24-themes/releases/tag/v26.0.0

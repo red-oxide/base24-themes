@@ -57,9 +57,9 @@
 <text x="718" y="318" fill="#eef1f0" font-size="13" font-weight="bold">base17</text>
 <text x="718" y="348" fill="#eef1f0" font-size="12">#814372</text>
 <rect x="24" y="384" width="776" height="134" rx="6" fill="#e4e8e7" stroke="#d4dad8"/>
-<text x="40" y="414" font-size="14" xml:space="preserve"><tspan fill="#979f9c"># Oriole Park at Camden Yards</tspan></text>
+<text x="40" y="414" font-size="14" xml:space="preserve"><tspan fill="#979f9c"># Opening day at the ballpark</tspan></text>
 <text x="40" y="436" font-size="14" xml:space="preserve"><tspan fill="#924c80">def </tspan><tspan fill="#346a85">first_pitch</tspan><tspan fill="#1e2427">(</tspan><tspan fill="#bb3106">team</tspan><tspan fill="#1e2427">: </tspan><tspan fill="#75611d">str</tspan><tspan fill="#1e2427">, </tspan><tspan fill="#bb3106">inning</tspan><tspan fill="#1e2427">: </tspan><tspan fill="#75611d">int</tspan><tspan fill="#1e2427"> = </tspan><tspan fill="#a74701">1</tspan><tspan fill="#1e2427">) -&gt; </tspan><tspan fill="#75611d">Game</tspan><tspan fill="#1e2427">:</tspan></text>
 <text x="40" y="458" font-size="14" xml:space="preserve"><tspan fill="#924c80">    if not </tspan><tspan fill="#bb3106">team</tspan><tspan fill="#1e2427">:</tspan></text>
 <text x="40" y="480" font-size="14" xml:space="preserve"><tspan fill="#924c80">        raise </tspan><tspan fill="#75611d">ValueError</tspan><tspan fill="#1e2427">(</tspan><tspan fill="#2f7057">&quot;no lineup\n&quot;</tspan><tspan fill="#1e2427">)</tspan></text>
-<text x="40" y="502" font-size="14" xml:space="preserve"><tspan fill="#924c80">    return </tspan><tspan fill="#75611d">Game</tspan><tspan fill="#1e2427">(home=</tspan><tspan fill="#2f7057">&quot;Orioles&quot;</tspan><tspan fill="#1e2427">, innings=</tspan><tspan fill="#a74701">9</tspan><tspan fill="#1e2427"> + </tspan><tspan fill="#bb3106">inning</tspan><tspan fill="#1e2427">)</tspan></text>
+<text x="40" y="502" font-size="14" xml:space="preserve"><tspan fill="#924c80">    return </tspan><tspan fill="#75611d">Game</tspan><tspan fill="#1e2427">(home=</tspan><tspan fill="#2f7057">&quot;Birds&quot;</tspan><tspan fill="#1e2427">, innings=</tspan><tspan fill="#a74701">9</tspan><tspan fill="#1e2427"> + </tspan><tspan fill="#bb3106">inning</tspan><tspan fill="#1e2427">)</tspan></text>
 </svg>

@@ -2,11 +2,11 @@
 <title>Eastern Shore Light</title>
 <rect x="0.5" y="0.5" width="391" height="200" rx="10" fill="#f2f2f0" stroke="#d9d9d5"/>
 <clipPath id="strip"><rect x="16" y="123" width="360" height="28" rx="4"/></clipPath>
-<text x="16" y="30" font-size="11" xml:space="preserve"><tspan fill="#9d9d98"># Oriole Park at Camden Yards</tspan></text>
+<text x="16" y="30" font-size="11" xml:space="preserve"><tspan fill="#9d9d98"># Opening day at the ballpark</tspan></text>
 <text x="16" y="47" font-size="11" xml:space="preserve"><tspan fill="#a04b4b">def </tspan><tspan fill="#46688e">first_pitch</tspan><tspan fill="#222222">(</tspan><tspan fill="#b23d0e">team</tspan><tspan fill="#222222">: </tspan><tspan fill="#7e6122">str</tspan><tspan fill="#222222">, </tspan><tspan fill="#b23d0e">inning</tspan><tspan fill="#222222">: </tspan><tspan fill="#7e6122">int</tspan><tspan fill="#222222"> = </tspan><tspan fill="#a84802">1</tspan><tspan fill="#222222">) -&gt; </tspan><tspan fill="#7e6122">Game</tspan><tspan fill="#222222">:</tspan></text>
 <text x="16" y="64" font-size="11" xml:space="preserve"><tspan fill="#a04b4b">    if not </tspan><tspan fill="#b23d0e">team</tspan><tspan fill="#222222">:</tspan></text>
 <text x="16" y="81" font-size="11" xml:space="preserve"><tspan fill="#a04b4b">        raise </tspan><tspan fill="#7e6122">ValueError</tspan><tspan fill="#222222">(</tspan><tspan fill="#556b38">&quot;no lineup\n&quot;</tspan><tspan fill="#222222">)</tspan></text>
-<text x="16" y="98" font-size="11" xml:space="preserve"><tspan fill="#a04b4b">    return </tspan><tspan fill="#7e6122">Game</tspan><tspan fill="#222222">(home=</tspan><tspan fill="#556b38">&quot;Orioles&quot;</tspan><tspan fill="#222222">, innings=</tspan><tspan fill="#a84802">9</tspan><tspan fill="#222222"> + </tspan><tspan fill="#b23d0e">inning</tspan><tspan fill="#222222">)</tspan></text>
+<text x="16" y="98" font-size="11" xml:space="preserve"><tspan fill="#a04b4b">    return </tspan><tspan fill="#7e6122">Game</tspan><tspan fill="#222222">(home=</tspan><tspan fill="#556b38">&quot;Birds&quot;</tspan><tspan fill="#222222">, innings=</tspan><tspan fill="#a84802">9</tspan><tspan fill="#222222"> + </tspan><tspan fill="#b23d0e">inning</tspan><tspan fill="#222222">)</tspan></text>
 <g clip-path="url(#strip)">
 <rect x="16" y="123" width="15" height="28" fill="#f2f2f0"><title>base00 #f2f2f0</title></rect>
 <rect x="31" y="123" width="15" height="28" fill="#e9e9e6"><title>base01 #e9e9e6</title></rect>

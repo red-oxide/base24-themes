@@ -42,6 +42,10 @@ Add `base24-themes` as an input in your `flake.nix`:
 }
 ```
 
+`github:red-oxide/base24-themes` follows master. To pin a release, use its tag,
+such as `github:red-oxide/base24-themes/v26.0.0`; see the
+[changelog](./CHANGELOG.md).
+
 ## Development
 
 ```sh
