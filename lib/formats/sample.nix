@@ -4,7 +4,7 @@
   [
     [
       "base03"
-      "# Oriole Park at Camden Yards"
+      "# Opening day at the ballpark"
     ]
   ]
   [
@@ -120,7 +120,7 @@
     ]
     [
       "base0B"
-      "\"Orioles\""
+      "\"Birds\""
     ]
     [
       "base05"
