@@ -8,6 +8,7 @@
 
 let
   core = import ./core.nix { inherit lib; };
+  contrast = import ./contrast.nix { inherit lib; };
   format = file: import file { inherit lib core; };
 
   formats = {
@@ -22,6 +23,7 @@ let
   themes = import ./themes.nix { inherit lib; };
 in
 core
+// contrast
 // formats
 // {
   inherit themes;

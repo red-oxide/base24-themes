@@ -29,6 +29,7 @@ let
 
   nixos = evalModule modules.nixos { };
   homeManager = evalModule modules.homeManager { base24.customTheme = base16Theme; };
+  homeManagerLegacy = evalModule modules.homeManagerLegacy { base24.theme = "birdland-light"; };
   disabled = evalModule modules.nixos { base24.enable = false; };
 in
 {
@@ -42,6 +43,11 @@ in
     homeManager.lib ? base24
     && homeManager.lib.base24.getColor "base0D" == "dddddd"
     && homeManager.lib.base24.colors.base16 == "dddddd";
+
+  # homeManagerModules is the old name for homeModules; it must keep working.
+  homeManagerLegacy =
+    homeManagerLegacy.lib ? base24
+    && homeManagerLegacy.lib.base24.colors.base00 == themes.birdland-light.base00;
 
   disabled = !(disabled.lib ? base24);
 

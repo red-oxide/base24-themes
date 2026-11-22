@@ -1,6 +1,7 @@
 # Runs every suite and returns { "<suite>.<test>" = bool; }.
 #   base24:  the library (lib/)
-#   modules: { nixos, homeManager } exported by the flake
+#   modules: { nixos, homeManager, homeManagerLegacy } exported by the flake
+#            (homeModules.default and homeManagerModules.default)
 {
   lib,
   base24,
@@ -15,6 +16,7 @@ let
 
   suites = {
     core = ./core.nix;
+    contrast = ./contrast.nix;
     formats = ./formats.nix;
     themes = ./themes.nix;
     module = ./module.nix;

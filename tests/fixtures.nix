@@ -1,5 +1,5 @@
 # Shared test inputs and helpers.
-{ lib }:
+_:
 
 rec {
   base16Theme = {
@@ -28,8 +28,4 @@ rec {
 
   # True when forcing `value` throws.
   fails = value: !(builtins.tryEval (builtins.deepSeq value true)).success;
-
-  # Relative luminance weights; ordering is all that matters here.
-  channel = hex: offset: lib.fromHexString (builtins.substring offset 2 hex);
-  luminance = hex: 2126 * channel hex 0 + 7152 * channel hex 2 + 722 * channel hex 4;
 }

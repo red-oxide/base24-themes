@@ -11,7 +11,8 @@
         base24 = inputs.self.lib.base24;
         modules = {
           nixos = inputs.self.nixosModules.default;
-          homeManager = inputs.self.homeManagerModules.default;
+          homeManager = inputs.self.homeModules.default;
+          homeManagerLegacy = inputs.self.homeManagerModules.default;
         };
       };
 
