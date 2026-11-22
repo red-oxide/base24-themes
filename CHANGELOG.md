@@ -12,6 +12,15 @@ Unreleased. Routine flake input updates and formatting commits are left out.
 
 #### Added
 
+- Eight more bundled themes, four pairs of a dark theme and its `-light`
+  counterpart: [Spangled](./docs/spangled.md) (Frederick: fireworks over a
+  night-sky navy), [Eastern Shore](./docs/eastern-shore.md) (black, silver and
+  orange with shore colors), [Blue Crab](./docs/blue-crab.md) (Chesapeake Bay
+  teal, orange and Maryland flag colors) and [Harbor](./docs/harbor.md)
+  (Norfolk: battleship gray, sea foam and tidal green).
+- [Red Oxide](./docs/red-oxide.md) and Red Oxide Light, in the colors of the
+  red-oxide logo: oxide red and dark oxide on rusted steel and plate white.
+- Every theme except Birdland is tested to reach 4.5:1 on `base01` as well.
 - `luminance` and `contrastRatio`: WCAG 2 relative luminance and contrast ratio,
   in pure Nix (sRGB is linearized with a lookup table, since Nix has no `pow`).
 - Tests that every bundled theme's accents (`base08` to `base0F`) reach 4.5:1 on

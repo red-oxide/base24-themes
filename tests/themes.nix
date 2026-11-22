@@ -44,8 +44,10 @@ in
   # the claim each bundled theme's page makes.
   accentContrast = all (theme: accentsReach 4.5 (base24.getColors theme).base00 theme);
 
-  # Birdland Light also promises it on the panel background.
-  birdlandLightPanelContrast = accentsReach 4.5 themes.birdland-light.base01 themes.birdland-light;
+  # Every theme but Birdland also promises it on the panel background (base01).
+  panelContrast = builtins.all (theme: accentsReach 4.5 theme.base01 theme) (
+    builtins.attrValues (removeAttrs themes [ "birdland" ])
+  );
 
   # previews/<theme>.svg must match `nix eval --raw .#lib.base24.previews.<theme>`.
   previewsUpToDate = builtins.all (
