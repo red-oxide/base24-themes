@@ -18,6 +18,11 @@ Routine flake input updates and formatting commits are left out.
 - The repo is [REUSE](https://reuse.software)-compliant: SPDX headers on every
   file, license texts under `LICENSES/`, and a `reuse` flake check.
 
+### Changed
+
+- The [gallery](./docs/gallery.md) shows two cards per row at full size (392px,
+  up from 260px), so each dark theme sits beside its light variant.
+
 ## [26.0.0] - 2026-11-22
 
 The first tagged release. Pin it with `github:red-oxide/base24-themes/v26.0.0`.
