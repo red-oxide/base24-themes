@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Gallery card: a code sample on the theme's background, a strip of every
 # palette color, and system/variant tags (after tinted-theming's gallery).
 # The images in previews/cards/ are generated with this (see `cards`).

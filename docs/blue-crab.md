@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+SPDX-License-Identifier: MIT
+-->
+
 ## Blue Crab
 
 ![Blue Crab palette and syntax sample](../previews/blue-crab.svg)

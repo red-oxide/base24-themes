@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+SPDX-License-Identifier: MIT
+-->
+
 # base24-themes
 
 [Base24](https://github.com/tinted-theming/base24) color schemes for Nix, with a

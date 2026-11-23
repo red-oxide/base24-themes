@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Bundled themes (themes/), their previews and cards (previews/) and the
 # gallery (docs/gallery.md).
 { base24, fixtures, ... }:

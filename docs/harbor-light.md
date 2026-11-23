@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+SPDX-License-Identifier: MIT
+-->
+
 ## Harbor Light
 
 ![Harbor Light palette and syntax sample](../previews/harbor-light.svg)

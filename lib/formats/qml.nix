@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # A QML singleton. Register it in a qmldir file, e.g.
 #   singleton Theme 1.0 Theme.qml
 { lib, core, ... }:

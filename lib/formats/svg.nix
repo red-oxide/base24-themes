@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Preview image: palette swatches plus a syntax-highlighted code sample.
 # The README images in previews/ are generated with this (see `previews`).
 { lib, core, ... }:

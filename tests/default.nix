@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Runs every suite and returns { "<suite>.<test>" = bool; }.
 #   base24:  the library (lib/)
 #   modules: { nixos, homeManager, homeManagerLegacy } exported by the flake

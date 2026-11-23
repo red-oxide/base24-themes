@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
+# Licensing for files that cannot carry a header. See https://reuse.software.
+# docs/gallery.md and the SVGs under previews/ are generated from the themes,
+# and tests/themes.nix checks they match.
+version = 1
+
+[[annotations]]
+SPDX-FileCopyrightText  = "2026 Chris Palmer <chris@red-oxide.org>"
+SPDX-License-Identifier = "MIT"
+path                    = ["docs/gallery.md", "flake.lock", "previews/**"]

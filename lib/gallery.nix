@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # docs/gallery.md: every bundled theme's card, three to a row, each linking to
 # docs/<name>.md. Regenerate with:
 #   nix eval --raw .#lib.base24.gallery > docs/gallery.md

@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+SPDX-License-Identifier: MIT
+-->
+
 ## Eastern Shore
 
 ![Eastern Shore palette and syntax sample](../previews/eastern-shore.svg)

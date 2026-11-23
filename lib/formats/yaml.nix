@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Tinted-theming scheme format (system/name/author/variant + palette).
 { lib, core, ... }:
 

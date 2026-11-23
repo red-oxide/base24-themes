@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Theme validation and color access. Pure: needs only a nixpkgs `lib`.
 { lib }:
 
