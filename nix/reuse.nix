@@ -7,12 +7,10 @@
     { pkgs, ... }:
     {
       # Every file has an SPDX license and copyright (https://reuse.software).
-      checks.reuse =
-        pkgs.runCommand "base24-themes-reuse-lint" { nativeBuildInputs = [ pkgs.reuse ]; }
-          ''
-            cd ${self}
-            reuse lint
-            touch $out
-          '';
+      checks.reuse = pkgs.runCommand "base24-themes-reuse-lint" { nativeBuildInputs = [ pkgs.reuse ]; } ''
+        cd ${self}
+        reuse lint
+        touch $out
+      '';
     };
 }
