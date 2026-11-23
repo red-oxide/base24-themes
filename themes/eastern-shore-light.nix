@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 {
   name = "Eastern Shore Light";
   author = "chrisppy";

@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+SPDX-License-Identifier: MIT
+-->
+
 ## Red Oxide Light
 
 ![Red Oxide Light palette and syntax sample](../previews/red-oxide-light.svg)

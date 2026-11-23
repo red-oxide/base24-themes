@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Every themes/<name>.nix, keyed by file name. `name` defaults to the file name.
 { lib }:
 

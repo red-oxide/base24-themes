@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # The base24-themes library. Pure: it needs only a nixpkgs `lib`, so it works
 # with or without flakes:
 #

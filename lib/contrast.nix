@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # WCAG 2 relative luminance and contrast ratio. Pure: needs only a nixpkgs `lib`.
 #
 # Nix has no `pow`, so sRGB channels are linearized with a lookup table:

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+# SPDX-License-Identifier: MIT
+
 # Syntax-highlighted code sample shared by the SVG previews and gallery cards.
 # Each line is a list of [ color text ] segments.
 [

@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Chris Palmer <chris@red-oxide.org>
+SPDX-License-Identifier: MIT
+-->
+
 ## Library
 
 Everything lives at `lib.base24`: the functions, the bundled themes
