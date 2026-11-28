@@ -17,7 +17,7 @@
 # Users' files are links made at login by systemd-tmpfiles. They point at
 # /etc/xdg/base24, so they don't change when the theme does, and a file the
 # user already has is left alone.
-{ config, lib, ... }:
+{ config, ... }:
 
 let
   base24 = config.flake.lib.base24;
