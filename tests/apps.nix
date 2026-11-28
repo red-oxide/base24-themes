@@ -30,7 +30,8 @@ in
     && kitty.color15 == hex "base07";
 
   # The darker backgrounds and the bright accents are used too.
-  kittyBase24 = kitty.tab_bar_background == hex "base11" && kitty.inactive_tab_background == hex "base10";
+  kittyBase24 =
+    kitty.tab_bar_background == hex "base11" && kitty.inactive_tab_background == hex "base10";
 
   helix =
     helix."ui.background".bg == hex "base00"
