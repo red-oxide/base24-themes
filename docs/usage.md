@@ -174,3 +174,13 @@ The helix module adds the theme as `base24` and selects it (`settings.theme`, at
 default priority, so you can pick another). It has a `transparent` option that
 leaves the background to the terminal. This flake doesn't depend on
 nix-wrapper-modules: the modules only set the wrappers' own options.
+
+Without flakes, import them from `wrappers/` the way you import `lib/`:
+
+```nix
+let
+  base24 = import "${base24-themes}/lib" { inherit (pkgs) lib; };
+  wrappers = import "${base24-themes}/wrappers" { inherit (pkgs) lib; inherit base24; };
+in
+wrappers.kitty
+```

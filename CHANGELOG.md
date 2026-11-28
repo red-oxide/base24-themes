@@ -18,7 +18,9 @@ Routine flake input updates and formatting commits are left out.
 - Application colors: `lib.base24.apps` gives kitty, Helix, zathura, mpv, yazi
   and niri color settings using all 24 colors (base10/base11 for chrome,
   base12–base17 for bright accents), and `wrapperModules.<app>` applies them to
-  a nix-wrapper-modules wrapper with a `base24.theme` option.
+  a nix-wrapper-modules wrapper with a `base24.theme` option. Each program is
+  its own file (`lib/apps/<app>.nix`, `wrappers/<app>.nix`), and
+  `wrappers/` can be imported without flakes like `lib/`.
 
 - The repo is [REUSE](https://reuse.software)-compliant: SPDX headers on every
   file, license texts under `LICENSES/`, and a `reuse` flake check.

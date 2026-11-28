@@ -70,9 +70,12 @@ lib/
   themes.nix         loads themes/
   gallery.nix        generates docs/gallery.md
   formats/           one file per exporter: yaml, json, scss, qml, svg, card
+  apps/              one file per program's color settings (`lib.base24.apps`)
+wrappers/            one nix-wrapper-modules module per program
 nix/                 flake-parts glue, loaded automatically
   lib.nix            exports lib.base24
   module.nix         NixOS / Home Manager module
+  wrappers.nix       exports wrapperModules
   checks.nix         turns tests/ into `nix flake check`
 tests/               one suite per area, plus shared fixtures
 themes/              one file per theme
@@ -83,6 +86,17 @@ docs/                usage guide, theme pages and the gallery
 To add a format, create `lib/formats/<name>.nix` (it receives `{ lib, core }`
 and returns a `theme -> string` function), register it in `lib/default.nix` and
 add a test to `tests/formats.nix`.
+
+To add a program, create three files named after it; each directory picks up
+every file in it, so nothing needs registering:
+
+- `lib/apps/<name>.nix`: receives `{ lib, core, hex, rgb }` and returns a
+  function from a theme to the program's settings.
+- `wrappers/<name>.nix`: receives `{ lib, base24, opacity }` and returns
+  `{ extraOptions ? { }, apply }`, where `apply theme cfg` is the wrapper's
+  config.
+- `tests/apps/<name>.nix`: its tests. A check fails if one of the three is
+  missing.
 
 ## License
 
