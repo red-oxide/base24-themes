@@ -126,7 +126,8 @@ The same module is exported as `nixosModules.default` and `homeModules.default`
 | `base24.theme` | `"birdland"` | A bundled theme name |
 | `base24.customTheme` | `null` | An inline theme; overrides `theme` |
 
-The module only exposes colors. It does not configure any applications itself.
+The module only exposes colors. It does not configure any applications itself;
+for GTK and Qt apps, see [GTK and Qt apps](#gtk-and-qt-apps).
 
 ## Application colors
 
@@ -143,13 +144,15 @@ A Base16 theme gets base00 and the regular accents through the fallbacks, so it
 looks like a plain base16 mapping.
 
 | Function | Gives |
-| ------------------------------------------- | ------------------------------------------------- |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `apps.kitty theme` | kitty.conf colors, including the 16-color palette |
 | `apps.helix { theme, transparent ? false }` | A Helix theme (`themes/<name>.toml`) |
 | `apps.zathura { theme, opacity ? 1.0 }` | zathurarc color options |
 | `apps.mpv theme` | mpv options for the on-screen display |
 | `apps.yazi theme` | yazi `theme.toml` colors |
 | `apps.niri theme` | niri `layout` colors |
+| `apps.gtk theme` | libadwaita's colors: `colors`, plus `css.gtk4` (CSS variables) and `css.gtk3` (`@define-color`, for adw-gtk3) |
+| `apps.qtct theme` | A qt5ct/qt6ct color scheme for `lib.generators.toINI` |
 
 Programs that use the terminal's 16 colors, such as bat's `base16` theme, follow
 kitty's palette.
@@ -184,3 +187,55 @@ let
 in
 wrappers.kitty
 ```
+
+## GTK and Qt apps
+
+GTK and Qt colors are settings for every app built on them, not for one program,
+so they come as a NixOS module instead of a wrapper: `nixosModules.toolkits`. It
+imports `nixosModules.default`, so it uses the same `base24.theme`.
+
+```nix
+{ inputs, ... }: {
+  imports = [ inputs.base24-themes.nixosModules.toolkits ];
+
+  base24 = {
+    theme = "birdland";
+    gtk.enable = true;
+    qt.enable = true;
+  };
+}
+```
+
+| Option | Default | Colors |
+| ------------------- | ------- | -------------------------------------- |
+| `base24.gtk.enable` | `false` | GTK 3, GTK 4 and libadwaita apps |
+| `base24.qt.enable` | `false` | Qt 5 and Qt 6 apps (with Fusion style) |
+
+What they set:
+
+- **GTK 3 and plain GTK 4**: a theme named `base24`, which is
+  [adw-gtk3](https://github.com/lassekongo83/adw-gtk3) in the theme's variant
+  with the colors added. It is selected in `/etc/xdg/gtk-3.0/settings.ini` and
+  `/etc/xdg/gtk-4.0/settings.ini`, and in the system dconf database
+  (`org.gnome.desktop.interface`: `gtk-theme`, and `color-scheme` from the
+  theme's variant), which GTK reads instead on Wayland.
+- **libadwaita**: it ignores themes, so each user's `~/.config/gtk-4.0/gtk.css`
+  links to the colors as CSS variables.
+- **Qt**: `qt.platformTheme = "qt5ct"`, which qt6ct also answers to, and each
+  user's `qt5ct/qt5ct.conf` and `qt6ct/qt6ct.conf` link to a config that uses
+  Fusion and the theme's palette.
+
+The links in your home directory are made by systemd-tmpfiles when you log in.
+They point at `/etc/xdg/base24`, so a theme change takes effect without
+replacing them; restart an app to see it. A file that is already there is left
+alone, so remove your own `gtk-4.0/gtk.css`, `qt5ct.conf` or `qt6ct.conf` (or
+one left by Home Manager or Stylix) to let the link be made. Likewise, your own
+dconf settings win over the system database; to clear old ones:
+
+```sh
+dconf reset /org/gnome/desktop/interface/gtk-theme
+dconf reset /org/gnome/desktop/interface/color-scheme
+```
+
+Because the Qt configs are links to a read-only file, qt5ct and qt6ct can show
+your settings but not save them.

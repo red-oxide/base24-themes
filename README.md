@@ -29,6 +29,8 @@ small library of format converters and a module for NixOS and Home Manager.
   a Nix attrset, and `wrapperModules.<app>` applies them to a
   [nix-wrapper-modules](https://github.com/nix-community/nix-wrapper-modules)
   wrapper with one `base24.theme` option.
+- **GTK and Qt apps**: `nixosModules.toolkits` colors GTK 3, GTK 4, libadwaita,
+  Qt 5 and Qt 6 apps (`base24.gtk.enable`, `base24.qt.enable`).
 - **Validation**: themes are checked for missing or malformed colors, and
   `nix flake check` verifies every bundled theme.
 - **Module**: one module for NixOS and Home Manager that exposes the selected
@@ -80,6 +82,7 @@ wrappers/            one nix-wrapper-modules module per program
 nix/                 flake-parts glue, loaded automatically
   lib.nix            exports lib.base24
   module.nix         NixOS / Home Manager module
+  toolkits.nix       NixOS module for GTK and Qt apps
   wrappers.nix       exports wrapperModules
   checks.nix         turns tests/ into `nix flake check`
 tests/               one suite per area, plus shared fixtures
@@ -93,16 +96,18 @@ To add a format, create `lib/formats/<name>.nix` (it receives `{ lib, core }`
 and returns a `theme -> string` function), register it in `lib/default.nix` and
 add a test to `tests/formats.nix`.
 
-To add a program, create three files named after it; each directory picks up
-every file in it, so nothing needs registering:
+To add a program, create files named after it; each directory picks up every
+file in it, so nothing needs registering:
 
 - `lib/apps/<name>.nix`: receives `{ lib, core, hex, rgb }` and returns a
   function from a theme to the program's settings.
-- `wrappers/<name>.nix`: receives `{ lib, base24, opacity }` and returns
+- `tests/apps/<name>.nix`: its tests.
+- `wrappers/<name>.nix`, for a program with a nix-wrapper-modules wrapper:
+  receives `{ lib, base24, opacity }` and returns
   `{ extraOptions ? { }, apply }`, where `apply theme cfg` is the wrapper's
-  config.
-- `tests/apps/<name>.nix`: its tests. A check fails if one of the three is
-  missing.
+  config. Toolkits (`gtk`, `qtct`) have none.
+
+A check fails if a program has no tests or a wrapper has no colors.
 
 ## License
 

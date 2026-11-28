@@ -53,13 +53,20 @@ let
         };
       };
     };
+
+  # Keyed so that importing it more than once, directly and through
+  # nixosModules.toolkits, declares its options only once.
+  keyed = {
+    key = "base24-themes#base24";
+    imports = [ module ];
+  };
 in
 {
-  flake.nixosModules.base24 = module;
-  flake.nixosModules.default = module;
-  flake.homeModules.base24 = module;
-  flake.homeModules.default = module;
+  flake.nixosModules.base24 = keyed;
+  flake.nixosModules.default = keyed;
+  flake.homeModules.base24 = keyed;
+  flake.homeModules.default = keyed;
   # The older output name, kept so existing configurations keep working.
-  flake.homeManagerModules.base24 = module;
-  flake.homeManagerModules.default = module;
+  flake.homeManagerModules.base24 = keyed;
+  flake.homeManagerModules.default = keyed;
 }
