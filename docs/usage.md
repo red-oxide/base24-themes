@@ -131,9 +131,16 @@ The module only exposes colors. It does not configure any applications itself.
 ## Application colors
 
 `lib.base24.apps` has each program's color settings, as a Nix attrset in that
-program's own format. They use base24's bright colors (base12–base17) for bright
-ANSI and diagnostic colors; a Base16 theme gets the usual ones through the
-fallbacks.
+program's own format. They use all 24 colors:
+
+- **base10 and base11**, the darker backgrounds, for chrome around the content:
+  popups, menus, inactive tabs and status bars, and the tab bar.
+- **base12–base17**, the bright accents, for bright ANSI colors, diagnostics,
+  diffs, headings, built-ins and focus indicators (the active tab, the focus
+  ring, the selected menu item).
+
+A Base16 theme gets base00 and the regular accents through the fallbacks, so it
+looks like a plain base16 mapping.
 
 | Function | Gives |
 | ------------------------------------------- | ------------------------------------------------- |

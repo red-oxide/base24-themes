@@ -29,7 +29,15 @@ in
     && kitty.color9 == hex "base12"
     && kitty.color15 == hex "base07";
 
-  helix = helix."ui.background".bg == hex "base00" && helix.keyword == hex "base0E";
+  # The darker backgrounds and the bright accents are used too.
+  kittyBase24 = kitty.tab_bar_background == hex "base11" && kitty.inactive_tab_background == hex "base10";
+
+  helix =
+    helix."ui.background".bg == hex "base00"
+    && helix.keyword == hex "base0E"
+    && helix."ui.popup".bg == hex "base10"
+    && helix."ui.window".bg == hex "base11"
+    && helix."function.builtin" == hex "base16";
 
   helixTransparent = clearHelix."ui.background" == { } && !(clearHelix."ui.gutter" ? bg);
 
@@ -38,7 +46,13 @@ in
     && lib.hasPrefix "rgb(" zathura.statusbar-bg
     && !(lib.hasInfix "#" zathura.statusbar-bg);
 
-  niri = (base24.apps.niri base16Theme).border.active-color == hex "base0D";
+  niri =
+    let
+      niri = base24.apps.niri base16Theme;
+    in
+    niri.border.active-color == hex "base0D"
+    && niri.focus-ring.active-color == hex "base16"
+    && niri.insert-hint.color == "${hex "base16"}80";
 
   mpv = (base24.apps.mpv base16Theme).osd-color == hex "base05";
 
