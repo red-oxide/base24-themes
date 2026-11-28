@@ -28,10 +28,11 @@ let
 in
 lib.concatMapAttrs (app: lib.mapAttrs' (test: lib.nameValuePair "${app}.${test}")) suites
 // {
-  # Every program has its colors, its tests and a wrapper module.
+  # Every program has its colors and its tests, and every wrapper module a
+  # program's colors. (Toolkits such as gtk and qtct have no wrapper.)
   "files.match" =
     let
       names = builtins.attrNames;
     in
-    names base24.apps == names suites && names base24.apps == names wrappers;
+    names base24.apps == names suites && lib.all (n: base24.apps ? ${n}) (names wrappers);
 }
