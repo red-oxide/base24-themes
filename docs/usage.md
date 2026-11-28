@@ -131,12 +131,12 @@ The module only exposes colors. It does not configure any applications itself.
 ## Application colors
 
 `lib.base24.apps` has each program's color settings, as a Nix attrset in that
-program's own format. They use base24's bright colors (base12–base17) for
-bright ANSI and diagnostic colors; a Base16 theme gets the usual ones through
-the fallbacks.
+program's own format. They use base24's bright colors (base12–base17) for bright
+ANSI and diagnostic colors; a Base16 theme gets the usual ones through the
+fallbacks.
 
 | Function | Gives |
-| --- | --- |
+| ------------------------------------------- | ------------------------------------------------- |
 | `apps.kitty theme` | kitty.conf colors, including the 16-color palette |
 | `apps.helix { theme, transparent ? false }` | A Helix theme (`themes/<name>.toml`) |
 | `apps.zathura { theme, opacity ? 1.0 }` | zathurarc color options |
@@ -144,8 +144,8 @@ the fallbacks.
 | `apps.yazi theme` | yazi `theme.toml` file-list and marker colors |
 | `apps.niri theme` | niri `layout` focus-ring and border colors |
 
-Programs that use the terminal's 16 colors, such as bat's `base16` theme,
-follow kitty's palette.
+Programs that use the terminal's 16 colors, such as bat's `base16` theme, follow
+kitty's palette.
 
 ### With nix-wrapper-modules
 
@@ -163,7 +163,7 @@ inputs.nix-wrapper-modules.wrappers.kitty.wrap {
 }
 ```
 
-The helix module adds the theme as `base24` and selects it (`settings.theme`,
-at default priority, so you can pick another). It has a `transparent` option
-that leaves the background to the terminal. This flake doesn't depend on
+The helix module adds the theme as `base24` and selects it (`settings.theme`, at
+default priority, so you can pick another). It has a `transparent` option that
+leaves the background to the terminal. This flake doesn't depend on
 nix-wrapper-modules: the modules only set the wrappers' own options.

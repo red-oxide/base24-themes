@@ -12,7 +12,9 @@ let
 
   themeOption = lib.mkOption {
     type = lib.types.nullOr (
-      lib.types.either (lib.types.enum (builtins.attrNames base24.themes)) (lib.types.attrsOf lib.types.str)
+      lib.types.either (lib.types.enum (builtins.attrNames base24.themes)) (
+        lib.types.attrsOf lib.types.str
+      )
     );
     default = null;
     example = "birdland";
@@ -65,7 +67,10 @@ in
         description = "Leave the editor's background to the terminal.";
       };
       apply = theme: cfg: {
-        themes.base24 = base24.apps.helix { inherit theme; inherit (cfg) transparent; };
+        themes.base24 = base24.apps.helix {
+          inherit theme;
+          inherit (cfg) transparent;
+        };
         settings.theme = lib.mkDefault "base24";
       };
     };
@@ -73,7 +78,10 @@ in
     zathura = themed {
       extraOptions = { inherit opacity; };
       apply = theme: cfg: {
-        settings = base24.apps.zathura { inherit theme; inherit (cfg) opacity; };
+        settings = base24.apps.zathura {
+          inherit theme;
+          inherit (cfg) opacity;
+        };
       };
     };
 
