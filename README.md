@@ -24,6 +24,11 @@ small library of format converters and a module for NixOS and Home Manager.
 - **Format converters**: `toYaml` (tinted-theming scheme format), `toJson`,
   `toScss`, `toQml`, `toSvg` (the palette preview images) and `toCardSvg` (the
   gallery cards).
+- **Application colors**: `apps.kitty`, `apps.helix`, `apps.zathura`,
+  `apps.mpv`, `apps.yazi` and `apps.niri` give each program's color settings as
+  a Nix attrset, and `wrapperModules.<app>` applies them to a
+  [nix-wrapper-modules](https://github.com/nix-community/nix-wrapper-modules)
+  wrapper with one `base24.theme` option.
 - **Validation**: themes are checked for missing or malformed colors, and
   `nix flake check` verifies every bundled theme.
 - **Module**: one module for NixOS and Home Manager that exposes the selected
@@ -56,7 +61,12 @@ such as `github:red-oxide/base24-themes/v26.0.0`; see the
 ```sh
 nix flake check   # run the tests (also run in CI on every push and pull request)
 nix fmt           # format
+just update       # move the pins (tack), or `just update nixpkgs` for one
 ```
+
+The flake has no inputs: nixpkgs, devfmt and tack are pinned with
+[tack](https://github.com/manic-systems/tack) in `.tack/pins.toml`, and CI
+updates the lock daily. Using the flake doesn't need tack.
 
 ```
 lib/
@@ -65,19 +75,34 @@ lib/
   themes.nix         loads themes/
   gallery.nix        generates docs/gallery.md
   formats/           one file per exporter: yaml, json, scss, qml, svg, card
+  apps/              one file per program's color settings (`lib.base24.apps`)
+wrappers/            one nix-wrapper-modules module per program
 nix/                 flake-parts glue, loaded automatically
   lib.nix            exports lib.base24
   module.nix         NixOS / Home Manager module
+  wrappers.nix       exports wrapperModules
   checks.nix         turns tests/ into `nix flake check`
 tests/               one suite per area, plus shared fixtures
 themes/              one file per theme
 previews/            generated SVG previews (and cards/ for the gallery)
 docs/                usage guide, theme pages and the gallery
+.tack/               pins: pins.toml is ours, tack writes the rest
 ```
 
 To add a format, create `lib/formats/<name>.nix` (it receives `{ lib, core }`
 and returns a `theme -> string` function), register it in `lib/default.nix` and
 add a test to `tests/formats.nix`.
+
+To add a program, create three files named after it; each directory picks up
+every file in it, so nothing needs registering:
+
+- `lib/apps/<name>.nix`: receives `{ lib, core, hex, rgb }` and returns a
+  function from a theme to the program's settings.
+- `wrappers/<name>.nix`: receives `{ lib, base24, opacity }` and returns
+  `{ extraOptions ? { }, apply }`, where `apply theme cfg` is the wrapper's
+  config.
+- `tests/apps/<name>.nix`: its tests. A check fails if one of the three is
+  missing.
 
 ## License
 

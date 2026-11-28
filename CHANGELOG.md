@@ -15,10 +15,22 @@ Routine flake input updates and formatting commits are left out.
 
 ### Added
 
+- Application colors: `lib.base24.apps` gives kitty, Helix, zathura, mpv, yazi
+  and niri color settings using all 24 colors (base10/base11 for chrome,
+  base12–base17 for bright accents), and `wrapperModules.<app>` applies them to
+  a nix-wrapper-modules wrapper with a `base24.theme` option. Each program is
+  its own file (`lib/apps/<app>.nix`, `wrappers/<app>.nix`), and `wrappers/` can
+  be imported without flakes like `lib/`.
+
 - The repo is [REUSE](https://reuse.software)-compliant: SPDX headers on every
   file, license texts under `LICENSES/`, and a `reuse` flake check.
 
 ### Changed
+
+- Pins are managed with [tack](https://github.com/manic-systems/tack) instead of
+  flake inputs: `.tack/pins.toml` replaces `flake.lock`, a daily workflow runs
+  `tack update`, and the dev shell has tack. The flake has no inputs any more,
+  so drop any `inputs.base24-themes.inputs.*.follows` (Nix warns about them).
 
 - The [gallery](./docs/gallery.md) shows two cards per row at full size (392px,
   up from 260px), so each dark theme sits beside its light variant.

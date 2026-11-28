@@ -127,3 +127,60 @@ The same module is exported as `nixosModules.default` and `homeModules.default`
 | `base24.customTheme` | `null` | An inline theme; overrides `theme` |
 
 The module only exposes colors. It does not configure any applications itself.
+
+## Application colors
+
+`lib.base24.apps` has each program's color settings, as a Nix attrset in that
+program's own format. They use all 24 colors:
+
+- **base10 and base11**, the darker backgrounds, for chrome around the content:
+  popups, menus, inactive tabs and status bars, and the tab bar.
+- **base12–base17**, the bright accents, for bright ANSI colors, diagnostics,
+  diffs, headings, built-ins and focus indicators (the active tab, the focus
+  ring, the selected menu item).
+
+A Base16 theme gets base00 and the regular accents through the fallbacks, so it
+looks like a plain base16 mapping.
+
+| Function | Gives |
+| ------------------------------------------- | ------------------------------------------------- |
+| `apps.kitty theme` | kitty.conf colors, including the 16-color palette |
+| `apps.helix { theme, transparent ? false }` | A Helix theme (`themes/<name>.toml`) |
+| `apps.zathura { theme, opacity ? 1.0 }` | zathurarc color options |
+| `apps.mpv theme` | mpv options for the on-screen display |
+| `apps.yazi theme` | yazi `theme.toml` colors |
+| `apps.niri theme` | niri `layout` colors |
+
+Programs that use the terminal's 16 colors, such as bat's `base16` theme, follow
+kitty's palette.
+
+### With nix-wrapper-modules
+
+`wrapperModules.<app>` (kitty, helix, zathura, mpv, yazi, niri) sets those
+colors on the matching
+[nix-wrapper-modules](https://github.com/nix-community/nix-wrapper-modules)
+wrapper. Import it and pick a theme:
+
+```nix
+inputs.nix-wrapper-modules.wrappers.kitty.wrap {
+  inherit pkgs;
+  imports = [ inputs.base24-themes.wrapperModules.kitty ];
+  base24.theme = "birdland"; # or an attrset of base00–base17
+  base24.opacity = 0.95;     # kitty and zathura
+}
+```
+
+The helix module adds the theme as `base24` and selects it (`settings.theme`, at
+default priority, so you can pick another). It has a `transparent` option that
+leaves the background to the terminal. This flake doesn't depend on
+nix-wrapper-modules: the modules only set the wrappers' own options.
+
+Without flakes, import them from `wrappers/` the way you import `lib/`:
+
+```nix
+let
+  base24 = import "${base24-themes}/lib" { inherit (pkgs) lib; };
+  wrappers = import "${base24-themes}/wrappers" { inherit (pkgs) lib; inherit base24; };
+in
+wrappers.kitty
+```
