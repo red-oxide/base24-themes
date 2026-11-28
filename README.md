@@ -24,6 +24,11 @@ small library of format converters and a module for NixOS and Home Manager.
 - **Format converters**: `toYaml` (tinted-theming scheme format), `toJson`,
   `toScss`, `toQml`, `toSvg` (the palette preview images) and `toCardSvg` (the
   gallery cards).
+- **Application colors**: `apps.kitty`, `apps.helix`, `apps.zathura`,
+  `apps.mpv`, `apps.yazi` and `apps.niri` give each program's color settings
+  as a Nix attrset, and `wrapperModules.<app>` applies them to a
+  [nix-wrapper-modules](https://github.com/nix-community/nix-wrapper-modules)
+  wrapper with one `base24.theme` option.
 - **Validation**: themes are checked for missing or malformed colors, and
   `nix flake check` verifies every bundled theme.
 - **Module**: one module for NixOS and Home Manager that exposes the selected

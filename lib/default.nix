@@ -24,12 +24,15 @@ let
   };
 
   themes = import ./themes.nix { inherit lib; };
+
+  # Color settings for applications (lib/apps.nix).
+  apps = import ./apps.nix { inherit lib core; };
 in
 core
 // contrast
 // formats
 // {
-  inherit themes;
+  inherit apps themes;
 
   # SVG previews shown in the README. Regenerate one with:
   #   nix eval --raw .#lib.base24.previews.birdland > previews/birdland.svg

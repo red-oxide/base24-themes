@@ -21,6 +21,7 @@ let
     core = ./core.nix;
     contrast = ./contrast.nix;
     formats = ./formats.nix;
+    apps = ./apps.nix;
     themes = ./themes.nix;
     module = ./module.nix;
   };
