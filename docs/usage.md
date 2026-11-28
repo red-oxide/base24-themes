@@ -211,6 +211,17 @@ imports `nixosModules.default`, so it uses the same `base24.theme`.
 | `base24.gtk.enable` | `false` | GTK 3, GTK 4 and libadwaita apps |
 | `base24.qt.enable` | `false` | Qt 5 and Qt 6 apps (with Fusion style) |
 
+They also take the other things set in the same files, all optional. Each is
+`{ name; package ? null; }` (plus `size` for fonts and cursors), and a package
+given is installed:
+
+| Option | Default size | Used by |
+| ------------------------------- | ------------ | -------------------------------------- |
+| `base24.toolkits.iconTheme` | | GTK and Qt |
+| `base24.toolkits.font` | 11 | GTK and Qt (Qt's `general` font) |
+| `base24.toolkits.monospaceFont` | 11 | GTK (dconf) and Qt (Qt's `fixed` font) |
+| `base24.toolkits.cursorTheme` | 24 | GTK |
+
 What they set:
 
 - **GTK 3 and plain GTK 4**: a theme named `base24`, which is

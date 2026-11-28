@@ -24,7 +24,8 @@ Routine flake input updates and formatting commits are left out.
 
 - GTK and Qt apps: `nixosModules.toolkits` with `base24.gtk.enable` (an
   adw-gtk3-based theme for GTK 3 and GTK 4, and libadwaita's CSS variables) and
-  `base24.qt.enable` (qt5ct/qt6ct with Fusion and the theme's palette). The
+  `base24.qt.enable` (qt5ct/qt6ct with Fusion and the theme's palette), plus
+  optional `base24.toolkits.{iconTheme,font,monospaceFont,cursorTheme}`. The
   colors are also in `lib.base24.apps.gtk` and `lib.base24.apps.qtct`.
 
 - The repo is [REUSE](https://reuse.software)-compliant: SPDX headers on every

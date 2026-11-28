@@ -13,6 +13,8 @@
 #   base24.qt.enable   Qt 5 and 6 apps use qt5ct/qt6ct with the Fusion style
 #                      and the theme's palette; each user's qt5ct.conf and
 #                      qt6ct.conf link to it.
+#   base24.toolkits.*  Optional icon theme, fonts and cursor theme, written to
+#                      the same settings files (and installed).
 #
 # Users' files are links made at login by systemd-tmpfiles. They point at
 # /etc/xdg/base24, so they don't change when the theme does, and a file the
@@ -58,15 +60,69 @@ let
             for css in $dir/gtk-4.0/gtk*.css; do cat $gtk4Path >> $css; done
           '';
 
-      settingsIni = lib.generators.toINI { } { Settings.gtk-theme-name = "base24"; };
+      inherit (cfg.toolkits)
+        iconTheme
+        font
+        monospaceFont
+        cursorTheme
+        ;
+      set = value: lib.optionalAttrs (value != null);
+      gtkFont = f: "${f.name} ${toString f.size}";
+      # Quoted: unquoted, QSettings would read the comma as a list.
+      qtFont = f: ''"${f.name},${toString f.size}"'';
 
-      qtConf = lib.generators.toINI { } {
-        Appearance = {
-          color_scheme_path = "${etc}/qtct-colors.conf";
-          custom_palette = true;
-          style = "Fusion";
+      settingsIni = lib.generators.toINI { } {
+        Settings = {
+          gtk-theme-name = "base24";
+        }
+        // set iconTheme { gtk-icon-theme-name = iconTheme.name; }
+        // set font { gtk-font-name = gtkFont font; }
+        // set cursorTheme {
+          gtk-cursor-theme-name = cursorTheme.name;
+          gtk-cursor-theme-size = cursorTheme.size;
         };
       };
+
+      qtConf = lib.generators.toINI { } (
+        {
+          Appearance = {
+            color_scheme_path = "${etc}/qtct-colors.conf";
+            custom_palette = true;
+            style = "Fusion";
+          }
+          // set iconTheme { icon_theme = iconTheme.name; };
+        }
+        // lib.optionalAttrs (font != null || monospaceFont != null) {
+          Fonts = set font { general = qtFont font; } // set monospaceFont { fixed = qtFont monospaceFont; };
+        }
+      );
+
+      # A name, a size and the package providing it, for fonts and cursors.
+      named =
+        what: defaultSize:
+        lib.types.nullOr (
+          lib.types.submodule {
+            options = {
+              name = lib.mkOption {
+                type = lib.types.str;
+                description = "The ${what}'s name.";
+              };
+              package = lib.mkOption {
+                type = lib.types.nullOr lib.types.package;
+                default = null;
+                description = "The package providing the ${what}, installed when set.";
+              };
+            }
+            // lib.optionalAttrs (defaultSize != null) {
+              size = lib.mkOption {
+                type = lib.types.ints.positive;
+                default = defaultSize;
+                description = "The ${what}'s size.";
+              };
+            };
+          }
+        );
+      packages = lib.concatMap (x: lib.optional (x != null && x.package != null) x.package);
 
       link = path: target: "L %E/${path} - - - - ${target}";
     in
@@ -76,12 +132,49 @@ let
       options.base24 = {
         gtk.enable = lib.mkEnableOption "the selected theme for GTK 3, GTK 4 and libadwaita apps";
         qt.enable = lib.mkEnableOption "the selected theme for Qt 5 and Qt 6 apps";
+
+        # Not colors, but set in the same files, so set here too.
+        toolkits = {
+          iconTheme = lib.mkOption {
+            type = named "icon theme" null;
+            default = null;
+            example = lib.literalExpression ''{ name = "Yaru-sage"; package = pkgs.yaru-theme; }'';
+            description = "Icon theme for GTK and Qt apps.";
+          };
+          font = lib.mkOption {
+            type = named "font" 11;
+            default = null;
+            example = lib.literalExpression ''{ name = "Inter"; size = 11; package = pkgs.inter; }'';
+            description = "Interface font for GTK and Qt apps.";
+          };
+          monospaceFont = lib.mkOption {
+            type = named "font" 11;
+            default = null;
+            description = "Monospace font for GTK (dconf) and Qt apps.";
+          };
+          cursorTheme = lib.mkOption {
+            type = named "cursor theme" 24;
+            default = null;
+            example = lib.literalExpression ''{ name = "Bibata-Modern-Amber"; size = 24; package = pkgs.bibata-cursors; }'';
+            description = "Cursor theme for GTK apps.";
+          };
+        };
       };
 
       config = lib.mkIf cfg.enable (
         lib.mkMerge [
           (lib.mkIf cfg.gtk.enable {
-            environment.systemPackages = [ gtkTheme ];
+            environment.systemPackages = [
+              gtkTheme
+            ]
+            ++ packages [
+              iconTheme
+              cursorTheme
+            ];
+            fonts.packages = packages [
+              font
+              monospaceFont
+            ];
             environment.etc = {
               "xdg/gtk-3.0/settings.ini".text = settingsIni;
               "xdg/gtk-4.0/settings.ini".text = settingsIni;
@@ -93,6 +186,13 @@ let
                 settings."org/gnome/desktop/interface" = {
                   gtk-theme = "base24";
                   color-scheme = if dark then "prefer-dark" else "prefer-light";
+                }
+                // set iconTheme { icon-theme = iconTheme.name; }
+                // set font { font-name = gtkFont font; }
+                // set monospaceFont { monospace-font-name = gtkFont monospaceFont; }
+                // set cursorTheme {
+                  cursor-theme = cursorTheme.name;
+                  cursor-size = cursorTheme.size;
                 };
               }
             ];
@@ -100,6 +200,11 @@ let
           })
 
           (lib.mkIf cfg.qt.enable {
+            environment.systemPackages = packages [ iconTheme ];
+            fonts.packages = packages [
+              font
+              monospaceFont
+            ];
             qt = {
               enable = true;
               # qt6ct answers to qt5ct too, so this covers Qt 5 and Qt 6.

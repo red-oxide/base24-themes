@@ -32,6 +32,18 @@
         theme = "harbor-light";
         gtk.enable = true;
         qt.enable = true;
+        toolkits = {
+          iconTheme = {
+            name = "Adwaita";
+            package = pkgs.adwaita-icon-theme;
+          };
+          font.name = "Sans";
+          monospaceFont = {
+            name = "Mono Font";
+            size = 10;
+          };
+          cursorTheme.name = "Adwaita";
+        };
       };
       off = eval { theme = "harbor-light"; };
 
@@ -49,6 +61,9 @@
         assert on.qt.platformTheme == "qt5ct";
         assert on.environment.variables.QT_QPA_PLATFORMTHEME == "qt5ct";
         assert dconf.gtk-theme == "base24" && dconf.color-scheme == "prefer-light";
+        assert dconf.icon-theme == "Adwaita" && dconf.font-name == "Sans 11";
+        assert dconf.monospace-font-name == "Mono Font 10" && dconf.cursor-size == 24;
+        assert lib.elem pkgs.adwaita-icon-theme on.environment.systemPackages;
         assert lib.elem "L %E/gtk-4.0/gtk.css - - - - /etc/xdg/base24/gtk-4.0.css"
           on.systemd.user.tmpfiles.rules;
         assert lib.elem "L %E/qt6ct/qt6ct.conf - - - - /etc/xdg/base24/qtct.conf"
@@ -63,6 +78,11 @@
           grep -q -- '--accent-bg-color: #${colors.base0D};' $t/gtk-4.0/gtk.css
           grep -q -- '--window-bg-color: #${colors.base00};' ${etc "xdg/base24/gtk-4.0.css"}
           grep -qx 'gtk-theme-name=base24' ${etc "xdg/gtk-3.0/settings.ini"}
+          grep -qx 'gtk-icon-theme-name=Adwaita' ${etc "xdg/gtk-3.0/settings.ini"}
+          grep -qx 'gtk-font-name=Sans 11' ${etc "xdg/gtk-4.0/settings.ini"}
+          grep -qx 'gtk-cursor-theme-size=24' ${etc "xdg/gtk-3.0/settings.ini"}
+          grep -qx 'icon_theme=Adwaita' ${etc "xdg/base24/qtct.conf"}
+          grep -qx 'fixed="Mono Font,10"' ${etc "xdg/base24/qtct.conf"}
           grep -qx 'color_scheme_path=/etc/xdg/base24/qtct-colors.conf' ${etc "xdg/base24/qtct.conf"}
           grep -q '^active_colors=#ff' ${etc "xdg/base24/qtct-colors.conf"}
           touch $out
