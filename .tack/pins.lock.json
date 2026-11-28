@@ -1,0 +1,34 @@
+{
+  "$declared": {
+    "nixpkgs": "gh:nixos/nixpkgs/nixos-unstable",
+    "devfmt": "gh:red-oxide/devfmt",
+    "tack": "gh:manic-systems/tack"
+  },
+  "nixpkgs": {
+    "type": "github",
+    "owner": "nixos",
+    "repo": "nixpkgs",
+    "rev": "2786a2a72088ecf32aea5b3ec52099e6a7cff78f",
+    "narHash": "sha256-f/VVvxf5RsQgWVhUtefoca5ktVg0DA2bnkMOcmSnozo=",
+    "lastModified": 1795234589,
+    "public": true
+  },
+  "devfmt": {
+    "type": "github",
+    "owner": "red-oxide",
+    "repo": "devfmt",
+    "rev": "664022d4a28d7d76908bdf260917b07562a014e6",
+    "narHash": "sha256-Et7veXW2GzMahrjEmwdfOUfJSmifFZ1wS9sMXoPR384=",
+    "lastModified": 1795867951,
+    "public": true
+  },
+  "tack": {
+    "type": "github",
+    "owner": "manic-systems",
+    "repo": "tack",
+    "rev": "673997981720feebb3870645932b6cfe6657db9f",
+    "narHash": "sha256-iRVnAKvQh5vC76QppovlxTklJf98EA+GYEY91loasy4=",
+    "lastModified": 1795748364,
+    "public": true
+  }
+}

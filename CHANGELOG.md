@@ -27,6 +27,12 @@ Routine flake input updates and formatting commits are left out.
 
 ### Changed
 
+- Pins are managed with [tack](https://github.com/manic-systems/tack) instead
+  of flake inputs: `.tack/pins.toml` replaces `flake.lock`, a daily workflow
+  runs `tack update`, and the dev shell has tack. The flake has no inputs any
+  more, so drop any `inputs.base24-themes.inputs.*.follows` (Nix warns about
+  them).
+
 - The [gallery](./docs/gallery.md) shows two cards per row at full size (392px,
   up from 260px), so each dark theme sits beside its light variant.
 

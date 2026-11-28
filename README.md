@@ -61,7 +61,12 @@ such as `github:red-oxide/base24-themes/v26.0.0`; see the
 ```sh
 nix flake check   # run the tests (also run in CI on every push and pull request)
 nix fmt           # format
+just update       # move the pins (tack), or `just update nixpkgs` for one
 ```
+
+The flake has no inputs: nixpkgs, devfmt and tack are pinned with
+[tack](https://github.com/manic-systems/tack) in `.tack/pins.toml`, and CI
+updates the lock daily. Using the flake doesn't need tack.
 
 ```
 lib/
@@ -81,6 +86,7 @@ tests/               one suite per area, plus shared fixtures
 themes/              one file per theme
 previews/            generated SVG previews (and cards/ for the gallery)
 docs/                usage guide, theme pages and the gallery
+.tack/               pins: pins.toml is ours, tack writes the rest
 ```
 
 To add a format, create `lib/formats/<name>.nix` (it receives `{ lib, core }`
