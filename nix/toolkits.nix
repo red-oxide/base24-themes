@@ -192,7 +192,7 @@ let
                 // set monospaceFont { monospace-font-name = gtkFont monospaceFont; }
                 // set cursorTheme {
                   cursor-theme = cursorTheme.name;
-                  cursor-size = cursorTheme.size;
+                  cursor-size = lib.gvariant.mkInt32 cursorTheme.size;
                 };
               }
             ];
