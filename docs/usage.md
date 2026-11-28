@@ -148,8 +148,8 @@ looks like a plain base16 mapping.
 | `apps.helix { theme, transparent ? false }` | A Helix theme (`themes/<name>.toml`) |
 | `apps.zathura { theme, opacity ? 1.0 }` | zathurarc color options |
 | `apps.mpv theme` | mpv options for the on-screen display |
-| `apps.yazi theme` | yazi `theme.toml` file-list and marker colors |
-| `apps.niri theme` | niri `layout` focus-ring and border colors |
+| `apps.yazi theme` | yazi `theme.toml` colors |
+| `apps.niri theme` | niri `layout` colors |
 
 Programs that use the terminal's 16 colors, such as bat's `base16` theme, follow
 kitty's palette.
